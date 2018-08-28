@@ -1,5 +1,5 @@
 {
-  "name": "Hurry4Curry-Admin",
+  "name": "hurry4curry-admin",
   "version": "1.0.0",
   "description": "sample project",
   "main": "server",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kathiraashi/_US_E-comm.git"
+    "url": "git+https://github.com/kathiraashi/Hurry4Curry-Admin.git"
   },
   "keywords": [
     ""
@@ -17,9 +17,9 @@
   "author": "kathiravan",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kathiraashi/_US_E-comm/issues"
+    "url": "https://github.com/kathiraashi/Hurry4Curry-Admin/issues"
   },
-  "homepage": "https://github.com/kathiraashi/_US_E-comm#readme",
+  "homepage": "https://github.com/kathiraashi/Hurry4Curry-Admin#readme",
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
