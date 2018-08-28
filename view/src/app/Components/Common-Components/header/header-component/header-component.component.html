@@ -1,0 +1,40 @@
+<div class="Header_Page">
+   <!-- Header One -->
+   <div class="Header_One">
+      <!-- Logo -->
+      <img src="../../../../assets//images/basic/H4C-logo.png" alt="Logo" class="Header_Logo"> 
+      <!-- Search Section -->
+      <span class="search_section">
+         <input type="text" placeholder="search">
+         <i class="material-icons">search </i>
+      </span>
+      <!-- Logout Button -->
+      <span class="Logout_Btn"> <span (click)="LogOut()"> Logout </span></span>
+   </div>
+   <!-- Header Two -->
+   <div class="Header_Two">
+      <ul class="Menus">
+         <!-- DashBoard -->
+         <li class="Menu_List">
+            <span class="Menu">
+               <i class="material-icons">dashboard</i>
+               <span> &nbsp; Dashboard </span> 
+            </span>
+         </li>
+         <!-- CRM -->
+         <li  class="Menu_List" [routerLink]="['/List_Hub']">
+            <span class="Menu">
+               <i class="material-icons">dashboard</i>
+          <span> &nbsp; Hub </span> 
+            </span>
+         </li>
+        <!-- Product -->
+         <li class="Menu_List" style="outline:none;" [routerLink]="['/Product_List']">
+            <span class="Menu">
+               <i class="material-icons">people</i>
+               <span > &nbsp; Product </span> 
+            </span>
+         </li>
+     </ul>
+   </div>
+</div>
