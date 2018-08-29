@@ -2,6 +2,9 @@
    <div class="container-fluid">
       <!-- page Identity -->
       <div class="Page_Identity">
+         <div class="Page_Name">
+            <h5>HUB VIEW</h5>
+         </div>
          <div class="Page_Track">
          <ul>
             <li class="HeaderName">Hub</li>
@@ -17,29 +20,54 @@
          <div class="col-sm-4">
          <div class="Company_Details">
             <div class="view_item">
-               <div class="Static">Customer Name </div>
+               <div class="Static">Hub Name </div>
                <div class="dots"> : </div>
-               <div class="Data"> Customer Name</div>
+               <div class="Data">  {{_Data['Name']}} </div>
             </div>
             <div class="view_item">
-               <div class="Static">Contact No</div>
+               <div class="Static">User Name </div>
                <div class="dots"> : </div>
-               <div class="Data"> Contact No</div>
+               <div class="Data"> {{_Data['User_Name']}} </div>
+            </div>
+            <div class="view_item">
+               <div class="Static">Phone Number</div>
+               <div class="dots"> : </div>
+               <div class="Data"> {{_Data['Phone']}}  </div>
+            </div>
+            <div class="view_item">
+               <div class="Static">Email Address </div>
+               <div class="dots"> : </div>
+               <div class="Data"> {{_Data['Email']}} </div>
+            </div>
+            <div class="view_item">
+               <div class="Static">Website </div>
+               <div class="dots"> : </div>
+               <div class="Data"> {{_Data['Website']}} </div>
             </div>
             <div class="view_item">
                <div class="Static">GST NO </div>
                <div class="dots"> : </div>
-               <div class="Data">GST NO</div>
+               <div class="Data"> {{_Data['GSTNo']}} </div>
             </div>
             <div class="view_item">
-               <div class="Static">Email Id </div>
+               <div class="Static">Billing Address </div>
                <div class="dots"> : </div>
-               <div class="Data"> Email Id </div>
+               <div class="Data"> 
+                  <span> {{_Data['BillingAddress']?.Street}}, {{_Data['BillingAddress']?.Area}} </span>
+                  <span> {{_Data['BillingAddress']?.City?.City_Name}}, </span>
+                  <span> {{_Data['BillingAddress']?.State?.State_Name}},</span>
+                  <span> {{_Data['BillingAddress']?.Country?.Country_Name}} - {{_Data['BillingAddress']?.ZipCode}}.</span>
+               </div>
             </div>
             <div class="view_item">
-               <div class="Static">Address </div>
+               <div class="Static">Shop floor Address </div>
                <div class="dots"> : </div>
-               <div class="Data"> dsdfhgbhjh </div>
+               <div class="Data">
+                  <span> {{_Data['ShopFloorAddress']?.Street}}, {{_Data['ShopFloorAddress']?.Area}} </span>
+                  <span> {{_Data['ShopFloorAddress']?.City?.City_Name}}, </span>
+                  <span> {{_Data['ShopFloorAddress']?.State?.State_Name}}, </span>
+                  <span> {{_Data['ShopFloorAddress']?.Country?.Country_Name}} - {{_Data['ShopFloorAddress']?.ZipCode}}.</span>   
+               </div>
             </div>
          </div>
          <br>

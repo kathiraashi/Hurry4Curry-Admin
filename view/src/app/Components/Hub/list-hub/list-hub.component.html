@@ -18,6 +18,9 @@
       <div class="container-fluid">
          <!-- Page Identity -->
          <div class="Page_Identity">
+            <div class="Page_Name">
+               <h5>HUB LIST</h5>
+            </div>
             <div class="Page_Track">
                <ul>
                   <li class= "HeaderName">Hub</li>
@@ -60,16 +63,16 @@
                         <span class="Style_1">{{Item.Name}}</span>
                      </td>
                      <td>
-                        <span class="Style_1">{{Item.PhoneNumber}}</span>
+                        <span class="Style_1">{{Item.Phone}}</span>
                      </td>
                      <td>
-                        <span class="Style_1">{{Item.EmailAddress}}</span>
+                        <span class="Style_1">{{Item.Email}}</span>
                      </td>
                      <td>
                         <span class="Style_1">{{Item.GSTNo}}</span>
                      </td>
                      <td>
-                        <button color="primary" mat-raised-button [matMenuTriggerFor]="Action">Action</button>
+                        <button color="primary" mat-raised-button [matMenuTriggerFor]="Action" (click)="SetActionId(i)">Action</button>
                      </td>
                   </tr>
                </tbody>
@@ -81,10 +84,10 @@
 </div>
 <!-- Dropdown menus -->
 <mat-menu class="MenuStyleOne" #Action="matMenu" [overlapTrigger]="false" xPosition="after" yPosition="below" class="MenuStyleOne">
-   <button mat-menu-item >
+   <button mat-menu-item (click)="Edit()">
       <span>Edit</span>
    </button>
-   <button mat-menu-item [routerLink]="['/View_Hub']">
+   <button mat-menu-item (click)="View()">
       <span>View</span>
    </button>
 </mat-menu>

@@ -4,8 +4,10 @@ var Schema = mongoose.Schema;
 // Hub schema
    var HubSchema = mongoose.Schema({
       Name: { type : String , required : true},
-      PhoneNumber: { type : String },
-      EmailAddress: { type : String },
+      User_Name: { type : String , unique: true, required : true},
+      User_Password: { type : String , required : true},
+      Phone: { type : String, unique: true, required : true},
+      Email: { type : String },
       Website: { type : String },
       GSTNo: { type : String },
       Image: { type : Object },
@@ -26,9 +28,8 @@ var Schema = mongoose.Schema;
                                        Country_Name: { type : String } },
                            State: { _id: { type: Schema.Types.ObjectId, ref: 'Global_State' },
                                     State_Name: { type : String } },
-                           City: {  _id: { type: Schema.Types.ObjectId, ref: 'Global_City' },
+                           City: { _id: { type: Schema.Types.ObjectId, ref: 'Global_City' },
                                     City_Name: { type : String } } },
-      Company_Id: { type: Schema.Types.ObjectId, ref: 'Company_Management', required : true },
       Created_By : { type: Schema.Types.ObjectId, ref: 'User_Management', required : true },
       Last_Modified_By: { type: Schema.Types.ObjectId, ref: 'User_Management', required : true },
       Active_Status: { type : Boolean , required : true},
@@ -36,7 +37,7 @@ var Schema = mongoose.Schema;
       },
       { timestamps : true }
    );
-   var VarHub = mongoose.model( 'Hub' ,HubSchema, 'Hub_Hub_Info');
+   var VarHub = mongoose.model('Hub' ,HubSchema, 'Hub_List');
 
    module.exports = {
       HubSchema : VarHub

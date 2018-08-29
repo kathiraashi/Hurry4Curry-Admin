@@ -10,8 +10,18 @@
    width: 100%;
    margin-bottom: 5px;
 }
+.Page_Identity .Page_Name{
+   width:50%;
+}
+.Page_Identity .Page_Name h5{
+   color: #4f6a7a;
+   line-height: 35px;
+   font-size: 18px;
+   margin: 0px;
+   font-weight: 700;
+}
 .Page_Identity .Page_Track{
-   width:100%;
+   width:50%;
    line-height: 35px;
 }
 .Page_Identity .Page_Track ul{
@@ -23,6 +33,7 @@
    float: right;
 }
 .Page_Identity .Page_Track ul li {
+   color: #a5adb1;
    font-size: 13px;
    font-weight: 500;
    margin-left: 5px;

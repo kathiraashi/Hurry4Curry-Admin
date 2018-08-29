@@ -3,6 +3,9 @@
    <div class="container-fluid">
       <!-- page Identity -->
       <div class="Page_Identity">
+         <div class="Page_Name">
+            <h5>HUB CREATE</h5>
+         </div>
          <div class="Page_Track">
             <ul>
                <li class="HeaderName">Hub</li>
@@ -17,7 +20,7 @@
          <!-- left section -->
          <div class="row">
             <div class="col-sm-3" >
-               <div class="Left_Section">
+               <div class="Left_Section BoxStyle_1">
                   <div class="row">
                      <div class="col-sm-12 text-center">
                         <div class="PictureSection">
@@ -31,10 +34,23 @@
                            <span *ngIf="Form.controls['Name'].errors.required"> Name is required</span>
                         </p>
                      </div>
-                     <div class="col-sm-12 Form_Input" [ngClass]="{'Form_Err': !Form.controls['EmailAddress'].pristine && Form.controls['EmailAddress'].errors, 'Form_Success': Form.controls['EmailAddress'].valid && !Form.controls['EmailAddress'].pristine }" >
-                        <input type="text" formControlName="EmailAddress" placeholder="Email Address">
-                        <p class="error" *ngIf="Form.controls['EmailAddress'].errors && !Form.controls['EmailAddress'].pristine">
-                           <span *ngIf="Form.controls['EmailAddress'].errors.required"> Email is required</span>
+                     <div class="col-sm-12 Form_Input" [ngClass]="{'Form_Err': !Form.controls['Phone'].pristine && Form.controls['Phone'].errors, 'Form_Success': Form.controls['Phone'].valid && !Form.controls['Phone'].pristine }">
+                           <input type="text" formControlName="Phone" placeholder="Phone Number">
+                           <p class="error" *ngIf="Form.controls['Phone'].errors && !Form.controls['Phone'].pristine">
+                              <span *ngIf="Form.controls['Phone'].errors.required"> Phone Number is required</span>
+                           </p>
+                        </div>
+                     <div class="col-sm-12 Form_Input" [ngClass]="{'Form_Err': !Form.controls['User_Name'].pristine && Form.controls['User_Name'].errors, 'Form_Success': Form.controls['User_Name'].valid && !Form.controls['User_Name'].pristine }" >
+                        <input type="text" formControlName="User_Name" placeholder="User Name">
+                        <p class="error" *ngIf="Form.controls['User_Name'].errors && !Form.controls['User_Name'].pristine">
+                           <span *ngIf="Form.controls['User_Name'].errors.required"> User Name is required</span>
+                           <span *ngIf="Form.controls['User_Name'].errors.UserName_NotAvailable"> User Name Already Exist!</span>
+                        </p>
+                     </div>
+                     <div class="col-sm-12 Form_Input" [ngClass]="{'Form_Err': !Form.controls['User_Password'].pristine && Form.controls['User_Password'].errors, 'Form_Success': Form.controls['User_Password'].valid && !Form.controls['User_Password'].pristine }" >
+                        <input type="text" formControlName="User_Password" placeholder=" Password">
+                        <p class="error" *ngIf="Form.controls['User_Password'].errors && !Form.controls['User_Password'].pristine">
+                           <span *ngIf="Form.controls['User_Password'].errors.required"> Password is required</span>
                         </p>
                      </div>
                   </div>
@@ -45,10 +61,10 @@
                <div class="BoxStyle_1">
                   <h5 class="BoxHeader"> Hub Details </h5>
                   <div class="row">
-                     <div class="col-sm-4 Form_Input" [ngClass]="{'Form_Err': !Form.controls['PhoneNumber'].pristine && Form.controls['PhoneNumber'].errors, 'Form_Success': Form.controls['PhoneNumber'].valid && !Form.controls['PhoneNumber'].pristine }">
-                        <input type="text" formControlName="PhoneNumber" placeholder="Phone Number">
-                        <p class="error" *ngIf="Form.controls['PhoneNumber'].errors && !Form.controls['PhoneNumber'].pristine">
-                           <span *ngIf="Form.controls['PhoneNumber'].errors.required"> Phone Number is required</span>
+                     <div class="col-sm-4 Form_Input" [ngClass]="{'Form_Err': !Form.controls['Email'].pristine && Form.controls['Email'].errors, 'Form_Success': Form.controls['Email'].valid && !Form.controls['Email'].pristine }" >
+                        <input type="text" formControlName="Email" placeholder="Email Address">
+                        <p class="error" *ngIf="Form.controls['Email'].errors && !Form.controls['Email'].pristine">
+                           <span *ngIf="Form.controls['Email'].errors.required"> Email is required</span>
                         </p>
                      </div>
                      <div class="col-sm-4 Form_Input" >

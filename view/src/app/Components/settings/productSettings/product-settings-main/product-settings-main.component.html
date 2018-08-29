@@ -1,0 +1,39 @@
+<div class="Page_Section">
+   <div class="container-fluid">
+      <div class="Page_Identity">
+         <div class="Page_Name">
+               <h5>PRODUCT SETTINGS</h5>
+         </div>
+         <div class="Page_Track">
+            <ul >
+               <li class="HeaderName">Settings</li>
+               <li class="arrow">>></li>
+               <li>Product Settings</li>
+            </ul>
+         </div>
+      </div>
+      <div class="Page_Content Product_Settings">
+         <div class="Main_Section">
+            <div class="Left_Section">
+               <ul class="Tabs">
+                  <li class="Tab" [ngClass]="{'active':Active_Tab === 'Variants'}" (click)="Active_Tab_Change('Variants')">
+                     <span class="Tab_Content"> Variants </span>
+                  </li>
+                  <li class="Tab" [ngClass]="{'active':Active_Tab === 'UnitOfMeasure'}" (click)="Active_Tab_Change('UnitOfMeasure')">
+                     <span class="Tab_Content"> Unit of Measure</span>
+                  </li>
+              </ul>
+            </div>
+            <div class="Right_Section">
+               <div *ngIf="Active_Tab === 'Variants'">
+                  <app-product-variants></app-product-variants>
+               </div>
+               <div *ngIf="Active_Tab === 'UnitOfMeasure'">
+                  <app-product-unit-of-measure></app-product-unit-of-measure>
+               </div>
+           </div>
+         </div>
+      </div>
+   </div>
+</div>
+

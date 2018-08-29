@@ -29,10 +29,22 @@
             </span>
          </li>
         <!-- Product -->
-         <li class="Menu_List" style="outline:none;" [routerLink]="['/Product_List']">
+         <li class="Menu_List" [routerLink]="['/Product_List']">
             <span class="Menu">
                <i class="material-icons">people</i>
                <span > &nbsp; Product </span> 
+            </span>
+         </li>
+         <!-- Settings -->
+         <li class="Menu_List">
+            <span class="Menu_Tree">
+               <span class="Menu">
+                  <i class="material-icons">settings</i>
+                  <span> &nbsp; Settings </span> 
+               </span>
+               <ul class="Menu_Tree_View">
+                  <li class="Menu_Tree_List" [routerLink]="['/Settings_Product']"><a> Product Settings </a></li>
+               </ul>
             </span>
          </li>
      </ul>
