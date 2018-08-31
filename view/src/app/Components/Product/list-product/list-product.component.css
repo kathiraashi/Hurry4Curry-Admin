@@ -141,6 +141,16 @@
    font-weight: 600;
    cursor: pointer;
 }
+.Table_Section table tbody tr td .Style_1 .ProName {
+   margin-right: 5px;
+}
+.Table_Section table tbody tr td .Style_1 .ProAttr {
+   font-weight: 400;
+   font-size: 13px;
+   border: 1px solid;
+   padding: 0px 5px;
+   margin-right: 5px;
+}
 .Table_Section table tbody tr td .Action_Section{
    color: #ffffff;
    height: 35px;

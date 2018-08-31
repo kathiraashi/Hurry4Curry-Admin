@@ -15,35 +15,35 @@
    <div class="Header_Two">
       <ul class="Menus">
          <!-- DashBoard -->
-         <li class="Menu_List">
+         <li class="Menu_List" routerLinkActive="active">
             <span class="Menu">
                <i class="material-icons">dashboard</i>
                <span> &nbsp; Dashboard </span> 
             </span>
          </li>
          <!-- CRM -->
-         <li  class="Menu_List" [routerLink]="['/List_Hub']">
+         <li  class="Menu_List" routerLinkActive="active" [routerLink]="['/List_Hub']">
             <span class="Menu">
                <i class="material-icons">dashboard</i>
           <span> &nbsp; Hub </span> 
             </span>
          </li>
         <!-- Product -->
-         <li class="Menu_List" [routerLink]="['/Product_List']">
+         <li class="Menu_List" routerLinkActive="active" [routerLink]="['/Product_List']">
             <span class="Menu">
                <i class="material-icons">people</i>
                <span > &nbsp; Product </span> 
             </span>
          </li>
          <!-- Settings -->
-         <li class="Menu_List">
+         <li class="Menu_List" routerLinkActive="active" >
             <span class="Menu_Tree">
                <span class="Menu">
                   <i class="material-icons">settings</i>
                   <span> &nbsp; Settings </span> 
                </span>
                <ul class="Menu_Tree_View">
-                  <li class="Menu_Tree_List" [routerLink]="['/Settings_Product']"><a> Product Settings </a></li>
+                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/Settings_Product']"><a> Product Settings </a></li>
                </ul>
             </span>
          </li>

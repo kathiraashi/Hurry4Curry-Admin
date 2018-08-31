@@ -62,7 +62,7 @@ const appRoutes: Routes = [{
    data: { animation: { value: 'Product_Create'}  }
 },
 {
-   path: 'Product_View',
+   path: 'Product_View/:Product_Id',
    component: ViewProductComponent,
    canActivate: [AuthGuard],
    data: { animation: { value: 'Product_View'}  }

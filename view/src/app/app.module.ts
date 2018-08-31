@@ -16,9 +16,9 @@ import { AuthGuard } from './Authentication/auth.guard';
 
 // Future Modules
    import { ModalModule, AccordionModule} from 'ngx-bootstrap';
-   import {CalendarModule} from 'primeng/calendar';
-   import {MatButtonModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatMenuModule} from '@angular/material';
-   import {MatRadioModule} from '@angular/material/radio';
+   import { CalendarModule } from 'primeng/calendar';
+   import { ChipsModule } from 'primeng/chips';
+   import { MatButtonModule, MatFormFieldModule, MatSelectModule, MatCheckboxModule, MatMenuModule, MatRadioModule} from '@angular/material';
    import { NgSelectModule } from '@ng-select/ng-select';
 
 // Custom Modules
@@ -73,6 +73,7 @@ import { DeleteConfirmationComponent } from './Components/Common-Components/dele
      ModalModule.forRoot(),
      AccordionModule.forRoot(),
      CalendarModule,
+     ChipsModule,
      NgSelectModule,
      MatButtonModule,
      MatFormFieldModule,

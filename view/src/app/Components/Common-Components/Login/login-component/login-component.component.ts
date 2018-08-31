@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import * as CryptoJS from 'crypto-js';
 
 import { AdminService } from './../../../../services/Admin/admin.service';
+import { ToasterServiceService } from './../../../../services/Common-Services/toaster-service.service';
 
 @Component({
   selector: 'app-login-component',
@@ -23,7 +24,8 @@ export class LoginComponentComponent implements OnInit {
 
    constructor(
       private router: Router,
-      private service: AdminService
+      private service: AdminService,
+      private Toaster: ToasterServiceService
    ) { }
 
    ngOnInit() {
@@ -42,11 +44,11 @@ export class LoginComponentComponent implements OnInit {
             if (response['status'] === 200 && ReceivingData.Status) {
                this.router.navigate(['List_Hub']);
             } else if (response['status'] === 200 && !ReceivingData.Status) {
-               alert(ReceivingData.Message + '-1');
+               this.Toaster.NewToastrMessage({ Type: 'Error',  Message: ReceivingData['Message'] });
             } else if (response['status'] === 400 && !ReceivingData.Status) {
-               alert(ReceivingData.Message + '-2');
+               this.Toaster.NewToastrMessage({ Type: 'Error',  Message: ReceivingData['Message'] });
             } else if (response['status'] === 417 && !ReceivingData.Status) {
-               alert(ReceivingData.Message + '-3');
+               this.Toaster.NewToastrMessage({ Type: 'Error',  Message: ReceivingData['Message'] });
             } else {
                alert('Some Error Occurred!, Error Not Defined.');
             }
