@@ -39,7 +39,10 @@ import { ProductUnitOfMeasureComponent } from './Components/settings/productSett
 import { ModelProductVariantComponent } from './models/settings/product/model-product-variant/model-product-variant.component';
 import { ModelProductUnitOfMeasureComponent } from './models/settings/product/model-product-unit-of-measure/model-product-unit-of-measure.component';
 import { DeleteConfirmationComponent } from './Components/Common-Components/delete-confirmation/delete-confirmation.component';
-
+import { CreateSupplierComponent } from './Components/Supplier/create-supplier/create-supplier.component';
+import { ViewSupplierComponent } from './Components/Supplier/view-supplier/view-supplier.component';
+import { ListSupplierComponent } from './Components/Supplier/list-supplier/list-supplier.component';
+import { EditSupplierComponent } from './Components/Supplier/edit-supplier/edit-supplier.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +62,10 @@ import { DeleteConfirmationComponent } from './Components/Common-Components/dele
     ModelProductVariantComponent,
     ModelProductUnitOfMeasureComponent,
     DeleteConfirmationComponent,
+    ListSupplierComponent,
+    CreateSupplierComponent,
+    ViewSupplierComponent,
+    EditSupplierComponent,
   ],
   imports: [
     // Default Modules

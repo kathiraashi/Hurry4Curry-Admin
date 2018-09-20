@@ -46,8 +46,12 @@ app.use(bodyParser.json());
 // Hub
    require('./server/Web/Routes/Product/product.routes.js')(app);
 
+// Supplier
+   require('./server/Web/Routes/Supplier/Supplier.routes.js')(app);
+
 // Settings
    require('./server/Web/Routes/Settings/ProductSettings.routes.js')(app);
+
 
 
 

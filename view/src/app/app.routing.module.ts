@@ -11,8 +11,12 @@ import { EditHubComponent } from './Components/Hub/edit-hub/edit-hub.component';
 import { ListProductComponent } from './Components/Product/list-product/list-product.component';
 import { CreateProductComponent } from './Components/Product/create-product/create-product.component';
 import { ViewProductComponent } from './Components/Product/view-product/view-product.component';
+import { ListSupplierComponent } from './Components/Supplier/list-supplier/list-supplier.component';
+import { CreateSupplierComponent } from './Components/Supplier/create-supplier/create-supplier.component';
+import { ViewSupplierComponent } from './Components/Supplier/view-supplier/view-supplier.component';
 
 import { ProductSettingsMainComponent } from './Components/settings/productSettings/product-settings-main/product-settings-main.component';
+import { EditSupplierComponent } from './Components/Supplier/edit-supplier/edit-supplier.component';
 
 
 const appRoutes: Routes = [{
@@ -66,6 +70,30 @@ const appRoutes: Routes = [{
    component: ViewProductComponent,
    canActivate: [AuthGuard],
    data: { animation: { value: 'Product_View'}  }
+},
+{
+  path: 'Supplier_List',
+  component: ListSupplierComponent,
+  canActivate: [AuthGuard],
+  data: { animation: { value: 'Supplier_List'} }
+},
+{
+  path: 'Supplier_Create',
+  component: CreateSupplierComponent,
+  canActivate: [AuthGuard],
+  data: { animation: { value: 'Supplier_Create'} }
+},
+{
+  path: 'Supplier_View/:Supplier_Id',
+  component: ViewSupplierComponent,
+  canActivate: [AuthGuard],
+  data: { animation: { value: 'Supplier_View'} }
+},
+{
+  path: 'Supplier_Edit/:Supplier_Id',
+  component: EditSupplierComponent,
+  canActivate: [AuthGuard],
+  data: { animation: { value: 'Supplier_Edit'}  }
 },
 {
    path: 'Settings_Product',
