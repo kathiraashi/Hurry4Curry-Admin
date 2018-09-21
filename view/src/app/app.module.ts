@@ -43,6 +43,9 @@ import { CreateSupplierComponent } from './Components/Supplier/create-supplier/c
 import { ViewSupplierComponent } from './Components/Supplier/view-supplier/view-supplier.component';
 import { ListSupplierComponent } from './Components/Supplier/list-supplier/list-supplier.component';
 import { EditSupplierComponent } from './Components/Supplier/edit-supplier/edit-supplier.component';
+import { AccountSettingsMainComponent } from './Components/settings/AccountSettings/account-settings-main/account-settings-main.component';
+import { BankComponent } from './Components/settings/AccountSettings/SubComponents/bank/bank.component';
+import { ModelBankComponent } from './models/settings/Accounts/model-bank/model-bank.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +69,9 @@ import { EditSupplierComponent } from './Components/Supplier/edit-supplier/edit-
     CreateSupplierComponent,
     ViewSupplierComponent,
     EditSupplierComponent,
+    AccountSettingsMainComponent,
+    BankComponent,
+    ModelBankComponent
   ],
   imports: [
     // Default Modules
@@ -96,7 +102,8 @@ import { EditSupplierComponent } from './Components/Supplier/edit-supplier/edit-
   entryComponents: [
                      DeleteConfirmationComponent,
                      ModelProductVariantComponent,
-                     ModelProductUnitOfMeasureComponent
+                     ModelProductUnitOfMeasureComponent,
+                     ModelBankComponent
                   ]
 })
 export class AppModule { }

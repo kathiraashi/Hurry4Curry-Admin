@@ -18,6 +18,8 @@ import { ViewSupplierComponent } from './Components/Supplier/view-supplier/view-
 import { ProductSettingsMainComponent } from './Components/settings/productSettings/product-settings-main/product-settings-main.component';
 import { EditSupplierComponent } from './Components/Supplier/edit-supplier/edit-supplier.component';
 
+import { AccountSettingsMainComponent } from './Components/settings/AccountSettings/account-settings-main/account-settings-main.component';
+
 
 const appRoutes: Routes = [{
    path: '',
@@ -100,6 +102,12 @@ const appRoutes: Routes = [{
    component: ProductSettingsMainComponent,
    canActivate: [AuthGuard],
    data: { animation: { value: 'Settings_Product'}  }
+},
+{
+   path: 'Settings_Account',
+   component: AccountSettingsMainComponent,
+   canActivate: [AuthGuard],
+   data: { animation: { value: 'Settings_Account'}  }
 }
 
 ];

@@ -28,19 +28,19 @@
           <span> &nbsp; Hub </span> 
             </span>
          </li>
+      <!-- Supplier -->
+         <li class="Menu_List" routerLinkActive="active" [routerLink]="['/Supplier_List']">
+            <span class="Menu">
+               <i class="material-icons">people</i>
+               <span > &nbsp; Supplier </span> 
+            </span>
+         </li>
         <!-- Product -->
          <li class="Menu_List" routerLinkActive="active" [routerLink]="['/Product_List']">
             <span class="Menu">
                <i class="material-icons">people</i>
                <span > &nbsp; Product </span> 
             </span>
-         </li>
-        <!-- Supplier -->
-         <li class="Menu_List" routerLinkActive="active" [routerLink]="['/Supplier_List']">
-          <span class="Menu">
-             <i class="material-icons">people</i>
-             <span > &nbsp; Supplier </span> 
-          </span>
          </li>
          <!-- Settings -->
          <li class="Menu_List" routerLinkActive="active" >
@@ -51,6 +51,7 @@
                </span>
                <ul class="Menu_Tree_View">
                   <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/Settings_Product']"><a> Product Settings </a></li>
+                  <li class="Menu_Tree_List" routerLinkActive="active" [routerLink]="['/Settings_Account']"><a> Account Settings </a></li>
                </ul>
             </span>
          </li>

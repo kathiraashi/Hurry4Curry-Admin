@@ -199,6 +199,24 @@ var mongoose = require('mongoose');
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  Product UnitOfMeasure Async Validate 
    exports.ProductUnitOfMeasure_AsyncValidate = function(req, res) {
       var CryptoBytes  = CryptoJS.AES.decrypt(req.body.Info, 'SecretKeyIn@123');

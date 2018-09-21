@@ -43,6 +43,9 @@ app.use(bodyParser.json());
 // Hub
    require('./server/Web/Routes/Hub/Hub.routes.js')(app);
 
+//Franchisee
+   require('./server/Web/Routes/Franchisee/Franchisee.route.js')(app);
+
 // Hub
    require('./server/Web/Routes/Product/product.routes.js')(app);
 
@@ -51,6 +54,7 @@ app.use(bodyParser.json());
 
 // Settings
    require('./server/Web/Routes/Settings/ProductSettings.routes.js')(app);
+   require('./server/Web/Routes/Settings/AccountSettings.routes.js')(app);
 
 
 

@@ -44,8 +44,6 @@ exports.Product_Create = function(req, res) {
       res.status(400).send({Status: false, Message: "Hsn Code can not be empty" });
    } else if(!ReceivingData.UnitOfMeasure && typeof ReceivingData.UnitOfMeasure !== 'object' && Object.keys(ReceivingData.UnitOfMeasure).length <= 0 ) {
       res.status(400).send({Status: false, Message: "Unit Of Measure not be empty" });
-   } else if(!ReceivingData.CreatedBy || ReceivingData.CreatedBy === '' ) {
-      res.status(400).send({Status: false, Message: "Created Info can not be empty" });
    } else {
 
       if (ReceivingData.UnitOfMeasure && typeof ReceivingData.UnitOfMeasure === 'object' && Object.keys(ReceivingData.UnitOfMeasure).length > 0 ) {
@@ -64,7 +62,7 @@ exports.Product_Create = function(req, res) {
          Hsn_Code: ReceivingData.Hsn_Code,
          UnitOfMeasure: ReceivingData.UnitOfMeasure,
          Description: ReceivingData.Description,
-         CreatedBy: ReceivingData.CreatedBy,
+         Creator_Type: 'Admin',
          User_Id : mongoose.Types.ObjectId(ReceivingData.User_Id),
          Variants: ReceivingData.Variants_List,
          HubUser_Id: null,
@@ -80,14 +78,17 @@ exports.Product_Create = function(req, res) {
          } else {
             const output = [];
             if (result.Variants.length <= 0) {
-               const Obj = {  Product_Id: mongoose.Types.ObjectId(result._id),
+               const Obj = {  ProductGroup_Id: mongoose.Types.ObjectId(result._id),
                               Name: result.Name,
                               Name_withAttribute: result.Name,
                               Item: result.Item,
                               Hsn_Code: result.Hsn_Code,
                               UnitOfMeasure: mongoose.Types.ObjectId(result.UnitOfMeasure),
-                              Description: result.Description, 
-                              CreatedBy: result.CreatedBy,
+                              Description: result.Description,
+                              Creator_Type: 'Admin',
+                              User_Id : mongoose.Types.ObjectId(ReceivingData.User_Id),
+                              HubUser_Id: null,
+                              Franchisee_Id: null,
                               Variants: [],
                               Active_Status: true,
                               If_Deleted: false
@@ -99,14 +100,17 @@ exports.Product_Create = function(req, res) {
                   for (let r of remainder) for (let h of head) yield [h, ...r];
                }
                for (let product of cartesian(...result.Variants.map(i => i.Attribute_Values))) {
-                  const part = { Product_Id: mongoose.Types.ObjectId(result._id),
+                  const part = { ProductGroup_Id: mongoose.Types.ObjectId(result._id),
                                  Name: result.Name,
                                  Name_withAttribute: result.Name,
                                  Item: result.Item,
                                  Hsn_Code: result.Hsn_Code,
                                  UnitOfMeasure: mongoose.Types.ObjectId(result.UnitOfMeasure),
-                                 Description: result.Description, 
-                                 CreatedBy: result.CreatedBy,
+                                 Description: result.Description,
+                                 Creator_Type: 'Admin',
+                                 User_Id : mongoose.Types.ObjectId(ReceivingData.User_Id),
+                                 HubUser_Id: null,
+                                 Franchisee_Id: null,
                                  Variants: [],
                                  Active_Status: true,
                                  If_Deleted: false };
@@ -145,7 +149,7 @@ exports.Product_List = function(req, res) {
       res.status(400).send({Status: false, Message: "User Details can not be empty" });
    }else {
       ProductModel.ProductsSchema
-         .find({ If_Deleted: false }, {}, {sort: { Product_Id: -1 }}) 
+         .find({ If_Deleted: false }, {}, {sort: { ProductGroup_Id: -1 }}) 
          .populate({ path: 'UnitOfMeasure', select: ['Product_UnitOfMeasure'] })
          .populate({ path: 'Variants.Attribute', select: ['Product_Variant'] })
          .exec(function(err, result) {

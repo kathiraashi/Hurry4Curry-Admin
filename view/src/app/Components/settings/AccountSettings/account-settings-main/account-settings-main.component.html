@@ -1,0 +1,33 @@
+<div class="Page_Section">
+   <div class="container-fluid">
+      <div class="Page_Identity">
+         <div class="Page_Name">
+               <h5>ACCOUNT SETTINGS</h5>
+         </div>
+         <div class="Page_Track">
+            <ul >
+               <li class="HeaderName">Settings</li>
+               <li class="arrow">>></li>
+               <li>Account Settings</li>
+            </ul>
+         </div>
+      </div>
+      <div class="Page_Content Product_Settings">
+         <div class="Main_Section">
+            <div class="Left_Section">
+               <ul class="Tabs">
+                  <li class="Tab" [ngClass]="{'active':Active_Tab === 'Bank'}" (click)="Active_Tab_Change('Bank')">
+                     <span class="Tab_Content"> Bank </span>
+                  </li>
+              </ul>
+            </div>
+            <div class="Right_Section">
+               <div *ngIf="Active_Tab === 'Bank'">
+                  <app-bank></app-bank>
+               </div>
+           </div>
+         </div>
+      </div>
+   </div>
+</div>
+
