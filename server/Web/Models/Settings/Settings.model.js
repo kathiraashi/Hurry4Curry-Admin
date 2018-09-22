@@ -34,6 +34,7 @@ var Schema = mongoose.Schema;
       Bank_Name: { type : String , required : true},
       IFSC_Code: { type : String , required : true},
       Address: { type : String , required : true},
+      Creator_Type : { type : String , required : true }, //Admin, Hub, Franchisee
       Created_By : { type: Schema.Types.ObjectId, ref: 'User_Management', required : true },
       Last_Modified_By: { type: Schema.Types.ObjectId, ref: 'User_Management', required : true },
       Active_Status: { type : Boolean , required : true},

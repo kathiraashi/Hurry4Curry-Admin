@@ -17,7 +17,7 @@ var mongoose = require('mongoose');
       } else if (!ReceivingData.User_Id || ReceivingData.User_Id === ''  ) {
          res.status(400).send({Status: false, Message: "User Details can not be empty" });
       }else {
-         SettingsModel.BanksSchema.findOne({'Account_No': { $regex : new RegExp("^" + ReceivingData.Account_No + "$", "i") }, 'If_Deleted': false }, {}, {}, function(err, result) {
+         SettingsModel.BanksSchema.findOne({ Creator_Type: 'Admin',  'Account_No': { $regex : new RegExp("^" + ReceivingData.Account_No + "$", "i") }, 'If_Deleted': false }, {}, {}, function(err, result) {
             if(err) {
                ErrorManagement.ErrorHandling.ErrorLogCreation(req, 'Banks Find Query Error', 'AccountSettings.controller.js', err);
                res.status(417).send({status: false, Message: "Some error occurred while Find Banks!."});
@@ -58,6 +58,7 @@ var mongoose = require('mongoose');
             Bank_Name: ReceivingData.Bank_Name,
             IFSC_Code: ReceivingData.IFSC_Code,
             Address: ReceivingData.Address,
+            Creator_Type: 'Admin',
             Created_By: mongoose.Types.ObjectId(ReceivingData.Created_By),
             Last_Modified_By: mongoose.Types.ObjectId(ReceivingData.Created_By),
             Active_Status: true,
@@ -95,7 +96,7 @@ var mongoose = require('mongoose');
          res.status(400).send({Status: false, Message: "User Details can not be empty" });
       }else {
          SettingsModel.BanksSchema
-            .find({'If_Deleted': false }, {}, {sort: { updatedAt: -1 }})
+            .find({ Creator_Type: 'Admin', 'If_Deleted': false }, {}, {sort: { updatedAt: -1 }})
             .populate({ path: 'Created_By', select: ['Name'] })
             .populate({ path: 'Last_Modified_By', select: ['Name'] })
             .exec(function(err, result) { // Bank FindOne Query
@@ -118,7 +119,7 @@ var mongoose = require('mongoose');
       if (!ReceivingData.User_Id || ReceivingData.User_Id === ''  ) {
          res.status(400).send({Status: false, Message: "User Details can not be empty" });
       }else {
-         SettingsModel.BanksSchema.find({'If_Deleted': false }, { Bank : 1 }, {sort: { updatedAt: -1 }}, function(err, result) { // Bank FindOne Query
+         SettingsModel.BanksSchema.find({ Creator_Type: 'Admin','If_Deleted': false }, { Bank : 1 }, {sort: { updatedAt: -1 }}, function(err, result) { // Bank FindOne Query
             if(err) {
                ErrorManagement.ErrorHandling.ErrorLogCreation(req, 'Bank Find Query Error', 'AccountSettings.controller.js', err);
                res.status(417).send({status: false, Error:err, Message: "Some error occurred while Find The Bank!."});
